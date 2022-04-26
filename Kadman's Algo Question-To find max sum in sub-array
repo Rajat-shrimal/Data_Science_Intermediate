@@ -1,0 +1,16 @@
+A=[9,-5,4]
+n=len(A)
+sum=0
+ans=A[0]
+for i in range(n):
+	if A[i]>0:
+		sum+=A[i]
+		ans=max(sum,ans)
+	if A[i]<0:
+		if sum+A[i]>0:
+			sum+=A[i]
+			ans=max(sum,ans)
+		else:
+			sum=A[i]
+			ans=max(sum,ans)
+print(ans)
